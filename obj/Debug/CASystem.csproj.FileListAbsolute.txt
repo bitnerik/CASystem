@@ -1,0 +1,12 @@
+C:\Users\dmitr\source\repos\CASystem\CASystem\bin\Debug\CADB.mdf
+C:\Users\dmitr\source\repos\CASystem\CASystem\bin\Debug\CADB_log.ldf
+C:\Users\dmitr\source\repos\CASystem\CASystem\bin\Debug\CASystem.exe.config
+C:\Users\dmitr\source\repos\CASystem\CASystem\bin\Debug\CASystem.exe
+C:\Users\dmitr\source\repos\CASystem\CASystem\bin\Debug\CASystem.pdb
+C:\Users\dmitr\source\repos\CASystem\CASystem\obj\Debug\CASystem.csprojAssemblyReference.cache
+C:\Users\dmitr\source\repos\CASystem\CASystem\obj\Debug\CASystem.Form1.resources
+C:\Users\dmitr\source\repos\CASystem\CASystem\obj\Debug\CASystem.Properties.Resources.resources
+C:\Users\dmitr\source\repos\CASystem\CASystem\obj\Debug\CASystem.csproj.GenerateResource.cache
+C:\Users\dmitr\source\repos\CASystem\CASystem\obj\Debug\CASystem.csproj.CoreCompileInputs.cache
+C:\Users\dmitr\source\repos\CASystem\CASystem\obj\Debug\CASystem.exe
+C:\Users\dmitr\source\repos\CASystem\CASystem\obj\Debug\CASystem.pdb
