@@ -12,10 +12,10 @@ using System.Data.SqlClient;
 
 namespace CASystem
 {
-    public partial class Form1 : Form
+    public partial class ManagerForm : Form
     {
         private SqlConnection sqlConnection;
-        public Form1()
+        public ManagerForm()
         {
             InitializeComponent();
         }

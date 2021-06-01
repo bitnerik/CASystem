@@ -1,7 +1,7 @@
 ﻿
 namespace CASystem
 {
-    partial class Form1
+    partial class ManagerForm
     {
         /// <summary>
         /// Required designer variable.
