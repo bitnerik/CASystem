@@ -1,20 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Configuration;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace CASystem
 {
     public partial class ManagerForm : Form
     {
-        private SqlConnection sqlConnection;
         public ManagerForm()
         {
             InitializeComponent();
@@ -26,19 +18,11 @@ namespace CASystem
             this.productTypeTableAdapter1.Fill(this.cADBDataSet1.ProductType);
             // TODO: This line of code loads data into the 'cADBDataSet.ProductType' table. You can move, or remove it, as needed.
             this.productTypeTableAdapter.Fill(this.cADBDataSet.ProductType);
-            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["CADB"].ConnectionString);
-
-            sqlConnection.Open();
-
-            if (sqlConnection.State == ConnectionState.Open)
-            {
-                MessageBox.Show("Connection established");
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand($"INSERT INTO [Product] (ProductBrand, ProductBuyDate, ProductModel, ProductBuyPrice, ProductSellPrice, ProductTypeID) VALUES (@ProductBrand, @ProductBuyDate, @ProductModel, @ProductBuyPrice, @ProductSellPrice, @ProductTypeID)", sqlConnection);
+            SqlCommand command = new SqlCommand($"INSERT INTO [Product] (ProductBrand, ProductBuyDate, ProductModel, ProductBuyPrice, ProductSellPrice, ProductTypeID) VALUES (@ProductBrand, @ProductBuyDate, @ProductModel, @ProductBuyPrice, @ProductSellPrice, @ProductTypeID)", SqlCon.SqlConnection);
 
             DateTime date = DateTime.Parse(textBox2.Text);
 
@@ -55,7 +39,7 @@ namespace CASystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM Product WHERE ProductTypeID = {comboBox1.SelectedValue}  and ProductAvailable = 1", sqlConnection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM Product WHERE ProductTypeID = {comboBox1.SelectedValue}  and ProductAvailable = 1", SqlCon.SqlConnection);
 
             DataSet dataSet = new DataSet();
             dataAdapter.Fill(dataSet);

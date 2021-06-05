@@ -72,6 +72,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CADBDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CADBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CADBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +91,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlCon.cs" />
+    <Compile Include="UserRoleEnum.cs" />
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerForm.resx">
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +107,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="CADBDataSet.xsc">
       <DependentUpon>CADBDataSet.xsd</DependentUpon>
@@ -114,6 +131,17 @@
     <None Include="CADBDataSet1.xss">
       <DependentUpon>CADBDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="CADBDataSet2.xsc">
+      <DependentUpon>CADBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CADBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CADBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CADBDataSet2.xss">
+      <DependentUpon>CADBDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -128,6 +156,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\CAsys.jpg" />
     <Content Include="CADB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
