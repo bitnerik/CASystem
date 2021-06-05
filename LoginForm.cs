@@ -72,10 +72,4 @@ namespace CASystem
             }
         }
     }
-
-    public class User
-    {
-        int UserId { get; set; }
-        string Password { get; set; }
-    }
 }

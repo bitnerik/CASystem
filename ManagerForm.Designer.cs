@@ -82,7 +82,7 @@ namespace CASystem
             this.Insert.Location = new System.Drawing.Point(0, 0);
             this.Insert.Name = "Insert";
             this.Insert.SelectedIndex = 0;
-            this.Insert.Size = new System.Drawing.Size(1124, 465);
+            this.Insert.Size = new System.Drawing.Size(1049, 465);
             this.Insert.TabIndex = 0;
             // 
             // tabPage1
@@ -102,10 +102,10 @@ namespace CASystem
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1116, 439);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(1041, 439);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "INSERT";
+            this.tabPage1.Text = "Insert product";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // label6
@@ -209,7 +209,7 @@ namespace CASystem
             // 
             // textBox1
             // 
-            this.textBox1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBox1.Location = new System.Drawing.Point(45, 63);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
@@ -225,10 +225,10 @@ namespace CASystem
             this.tabPage2.Controls.Add(this.tableLayoutPanel1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1116, 439);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Size = new System.Drawing.Size(1041, 439);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Count Product";
+            this.tabPage2.Text = "Count product";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // label8
@@ -345,11 +345,11 @@ namespace CASystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1124, 465);
+            this.ClientSize = new System.Drawing.Size(1049, 465);
             this.Controls.Add(this.Insert);
             this.Name = "ManagerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Insert.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

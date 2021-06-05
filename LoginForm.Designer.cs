@@ -95,6 +95,7 @@ namespace CASystem
             this.PasswordTextBox.Size = new System.Drawing.Size(154, 20);
             this.PasswordTextBox.TabIndex = 2;
             this.PasswordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PasswordTextBox_KeyDown);
+            this.PasswordTextBox.PasswordChar = '*';
             // 
             // PasswordLabel
             // 
