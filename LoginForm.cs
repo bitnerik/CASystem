@@ -50,6 +50,9 @@ namespace CASystem
                     case (int)UserRoleEnum.Director:
                         break;
                     case (int)UserRoleEnum.Seller:
+                        this.Hide();
+                        var sellerForm = new SellerForm();
+                        sellerForm.ShowDialog();
                         break;
                     case (int)UserRoleEnum.Accoountant:
                         break;

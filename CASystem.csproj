@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountantForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountantForm.Designer.cs">
+      <DependentUpon>AccountantForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CADBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,6 +105,9 @@
     </Compile>
     <Compile Include="SqlCon.cs" />
     <Compile Include="UserRoleEnum.cs" />
+    <EmbeddedResource Include="AccountantForm.resx">
+      <DependentUpon>AccountantForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

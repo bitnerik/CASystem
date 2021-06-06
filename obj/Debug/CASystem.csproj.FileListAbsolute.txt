@@ -12,3 +12,4 @@ C:\Users\dmitr\source\repos\CASystem\CASystem\obj\Debug\CASystem.pdb
 C:\Users\dmitr\source\repos\CASystem\CASystem\obj\Debug\CASystem.LoginForm.resources
 C:\Users\dmitr\source\repos\CASystem\CASystem\obj\Debug\CASystem.ManagerForm.resources
 C:\Users\dmitr\source\repos\CASystem\CASystem\obj\Debug\CASystem.SellerForm.resources
+C:\Users\dmitr\source\repos\CASystem\CASystem\obj\Debug\CASystem.AccountantForm.resources

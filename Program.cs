@@ -17,7 +17,7 @@ namespace CASystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new LoginForm());
-            Application.Run(new SellerForm());
+            Application.Run(new AccountantForm());
         }
     }
 }
