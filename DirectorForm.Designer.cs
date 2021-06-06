@@ -112,7 +112,7 @@ namespace CASystem
             // 
             this.logOutButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.logOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.logOutButton.Location = new System.Drawing.Point(807, 17);
+            this.logOutButton.Location = new System.Drawing.Point(404, 352);
             this.logOutButton.Name = "logOutButton";
             this.logOutButton.Size = new System.Drawing.Size(118, 41);
             this.logOutButton.TabIndex = 11;
@@ -123,7 +123,7 @@ namespace CASystem
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(326, 236);
+            this.label5.Location = new System.Drawing.Point(325, 232);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 13);
             this.label5.TabIndex = 10;
@@ -132,7 +132,7 @@ namespace CASystem
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(326, 281);
+            this.label4.Location = new System.Drawing.Point(325, 277);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 13);
             this.label4.TabIndex = 9;
@@ -141,7 +141,7 @@ namespace CASystem
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(326, 192);
+            this.label3.Location = new System.Drawing.Point(325, 188);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 8;
@@ -149,28 +149,28 @@ namespace CASystem
             // 
             // soldBox
             // 
-            this.soldBox.Location = new System.Drawing.Point(323, 294);
+            this.soldBox.Location = new System.Drawing.Point(322, 290);
             this.soldBox.Name = "soldBox";
             this.soldBox.Size = new System.Drawing.Size(100, 20);
             this.soldBox.TabIndex = 7;
             // 
             // boughtBox
             // 
-            this.boughtBox.Location = new System.Drawing.Point(323, 249);
+            this.boughtBox.Location = new System.Drawing.Point(322, 245);
             this.boughtBox.Name = "boughtBox";
             this.boughtBox.Size = new System.Drawing.Size(100, 20);
             this.boughtBox.TabIndex = 6;
             // 
             // incomeBox
             // 
-            this.incomeBox.Location = new System.Drawing.Point(323, 205);
+            this.incomeBox.Location = new System.Drawing.Point(322, 201);
             this.incomeBox.Name = "incomeBox";
             this.incomeBox.Size = new System.Drawing.Size(100, 20);
             this.incomeBox.TabIndex = 5;
             // 
             // calculateButton
             // 
-            this.calculateButton.Location = new System.Drawing.Point(323, 148);
+            this.calculateButton.Location = new System.Drawing.Point(322, 144);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(75, 23);
             this.calculateButton.TabIndex = 4;
@@ -181,7 +181,7 @@ namespace CASystem
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(326, 91);
+            this.label2.Location = new System.Drawing.Point(325, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 3;
@@ -190,7 +190,7 @@ namespace CASystem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(326, 45);
+            this.label1.Location = new System.Drawing.Point(325, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 2;
@@ -199,7 +199,7 @@ namespace CASystem
             // dateTimeTillPicker
             // 
             this.dateTimeTillPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeTillPicker.Location = new System.Drawing.Point(323, 106);
+            this.dateTimeTillPicker.Location = new System.Drawing.Point(322, 102);
             this.dateTimeTillPicker.Name = "dateTimeTillPicker";
             this.dateTimeTillPicker.Size = new System.Drawing.Size(200, 20);
             this.dateTimeTillPicker.TabIndex = 1;
@@ -207,7 +207,7 @@ namespace CASystem
             // dateTimeFromPicker
             // 
             this.dateTimeFromPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeFromPicker.Location = new System.Drawing.Point(323, 61);
+            this.dateTimeFromPicker.Location = new System.Drawing.Point(322, 57);
             this.dateTimeFromPicker.Name = "dateTimeFromPicker";
             this.dateTimeFromPicker.Size = new System.Drawing.Size(200, 20);
             this.dateTimeFromPicker.TabIndex = 0;

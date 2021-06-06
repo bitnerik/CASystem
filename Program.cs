@@ -13,8 +13,7 @@ namespace CASystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoginForm());
-            Application.Run(new DirectorForm());
+            Application.Run(new LoginForm());
         }
     }
 }

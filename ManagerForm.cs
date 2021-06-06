@@ -41,9 +41,16 @@ namespace CASystem
             command.Parameters.AddWithValue("ProductBuyPrice", textBox4.Text);
             command.Parameters.AddWithValue("ProductSellPrice", textBox5.Text);
             command.Parameters.AddWithValue("ProductTypeID", productTypeComboBox.SelectedValue);
+            var updateItemsCount = command.ExecuteNonQuery();
 
-            MessageBox.Show(command.ExecuteNonQuery().ToString());
-
+            if (updateItemsCount >= 1)
+            {
+                MessageBox.Show("Item successfully added");
+            }
+            else
+            {
+                MessageBox.Show("Failed to add item");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

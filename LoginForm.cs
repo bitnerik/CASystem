@@ -16,7 +16,6 @@ namespace CASystem
         {
             // TODO: This line of code loads data into the 'cADBDataSet2.User' table. You can move, or remove it, as needed.
             this.userTableAdapter.Fill(this.cADBDataSet2.User);
-
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
@@ -42,18 +41,28 @@ namespace CASystem
                 switch (userId)
                 {
                     case (int)UserRoleEnum.Director:
+                        this.Hide();
+                        var directorForm = new DirectorForm();
+                        directorForm.ShowDialog();
+                        this.Close();
                         break;
                     case (int)UserRoleEnum.Seller:
                         this.Hide();
                         var sellerForm = new SellerForm();
                         sellerForm.ShowDialog();
+                        this.Close();
                         break;
                     case (int)UserRoleEnum.Accoountant:
+                        this.Hide();
+                        var accoountantForm = new AccountantForm();
+                        accoountantForm.ShowDialog();
+                        this.Close();
                         break;
                     case (int)UserRoleEnum.Manager:
                         this.Hide();
                         var managerForm = new ManagerForm();
                         managerForm.ShowDialog();
+                        this.Close();
                         break;
                     default:
                         break;
