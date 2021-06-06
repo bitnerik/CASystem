@@ -30,9 +30,10 @@ namespace CASystem
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.logOutButton = new System.Windows.Forms.Button();
+            this.logOutButton1 = new System.Windows.Forms.Button();
             this.Insert = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.productTypeComboBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@ namespace CASystem
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.boughtRadioButton = new System.Windows.Forms.RadioButton();
@@ -64,7 +64,7 @@ namespace CASystem
             this.productTypeTableAdapter = new CASystem.CADBDataSetTableAdapters.ProductTypeTableAdapter();
             this.productTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.productTypeTableAdapter1 = new CASystem.CADBDataSet1TableAdapters.ProductTypeTableAdapter();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buyDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Insert.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -78,17 +78,17 @@ namespace CASystem
             ((System.ComponentModel.ISupportInitialize)(this.productTypeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // logOutButton
+            // logOutButton1
             // 
-            this.logOutButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.logOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.logOutButton.Location = new System.Drawing.Point(833, 380);
-            this.logOutButton.Name = "logOutButton";
-            this.logOutButton.Size = new System.Drawing.Size(118, 41);
-            this.logOutButton.TabIndex = 11;
-            this.logOutButton.Text = "Log out";
-            this.logOutButton.UseVisualStyleBackColor = false;
-            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
+            this.logOutButton1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.logOutButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.logOutButton1.Location = new System.Drawing.Point(811, 384);
+            this.logOutButton1.Name = "logOutButton1";
+            this.logOutButton1.Size = new System.Drawing.Size(118, 41);
+            this.logOutButton1.TabIndex = 11;
+            this.logOutButton1.Text = "Log out";
+            this.logOutButton1.UseVisualStyleBackColor = false;
+            this.logOutButton1.Click += new System.EventHandler(this.logOutButton_Click);
             // 
             // Insert
             // 
@@ -103,6 +103,7 @@ namespace CASystem
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.buyDateTimePicker);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.productTypeComboBox);
             this.tabPage1.Controls.Add(this.label6);
@@ -115,7 +116,6 @@ namespace CASystem
             this.tabPage1.Controls.Add(this.textBox5);
             this.tabPage1.Controls.Add(this.textBox4);
             this.tabPage1.Controls.Add(this.textBox3);
-            this.tabPage1.Controls.Add(this.textBox2);
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -124,6 +124,18 @@ namespace CASystem
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Insert product";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.button3.Location = new System.Drawing.Point(533, 322);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(118, 41);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "Log out";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // productTypeComboBox
             // 
@@ -219,13 +231,6 @@ namespace CASystem
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 2;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(417, 118);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
-            // 
             // textBox1
             // 
             this.textBox1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -237,7 +242,7 @@ namespace CASystem
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.boughtRadioButton);
-            this.tabPage2.Controls.Add(this.logOutButton);
+            this.tabPage2.Controls.Add(this.logOutButton1);
             this.tabPage2.Controls.Add(this.soldRadioButton);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.textBox7);
@@ -387,16 +392,13 @@ namespace CASystem
             // 
             this.productTypeTableAdapter1.ClearBeforeFill = true;
             // 
-            // button3
+            // buyDateTimePicker
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.button3.Location = new System.Drawing.Point(533, 322);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(118, 41);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Log out";
-            this.button3.UseVisualStyleBackColor = false;
+            this.buyDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.buyDateTimePicker.Location = new System.Drawing.Point(417, 118);
+            this.buyDateTimePicker.Name = "buyDateTimePicker";
+            this.buyDateTimePicker.Size = new System.Drawing.Size(100, 20);
+            this.buyDateTimePicker.TabIndex = 15;
             // 
             // ManagerForm
             // 
@@ -432,7 +434,6 @@ namespace CASystem
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button1;
@@ -460,8 +461,9 @@ namespace CASystem
         private System.Windows.Forms.ComboBox productTypeComboBox;
         private System.Windows.Forms.RadioButton boughtRadioButton;
         private System.Windows.Forms.RadioButton soldRadioButton;
-        private System.Windows.Forms.Button logOutButton;
+        private System.Windows.Forms.Button logOutButton1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DateTimePicker buyDateTimePicker;
     }
 }
 

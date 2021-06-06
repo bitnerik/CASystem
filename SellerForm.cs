@@ -78,6 +78,11 @@ namespace CASystem
 
             MessageBox.Show($"{productListBox.CheckedItems.Count} products sold.\n{dateNow}");
 
+            for (int i = 0; i < productListBox.Items.Count; i++)
+            {
+                productListBox.SetItemChecked(i, false);
+            }
+
             checkProductButton_Click(sender, e);
         }
         private void logOutButton_Click(object sender, EventArgs e)
