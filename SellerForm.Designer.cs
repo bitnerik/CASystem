@@ -32,6 +32,7 @@ namespace CASystem
             this.productListBox = new System.Windows.Forms.CheckedListBox();
             this.checkProductButton = new System.Windows.Forms.Button();
             this.brandTextBox = new System.Windows.Forms.TextBox();
+            this.logOutButton = new System.Windows.Forms.Button();
             this.modelTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -68,6 +69,18 @@ namespace CASystem
             this.brandTextBox.Name = "brandTextBox";
             this.brandTextBox.Size = new System.Drawing.Size(203, 20);
             this.brandTextBox.TabIndex = 2;
+            // 
+            // logOutButton
+            // 
+            this.logOutButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.logOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.logOutButton.Location = new System.Drawing.Point(499, 346);
+            this.logOutButton.Name = "logOutButton";
+            this.logOutButton.Size = new System.Drawing.Size(118, 41);
+            this.logOutButton.TabIndex = 11;
+            this.logOutButton.Text = "Log out";
+            this.logOutButton.UseVisualStyleBackColor = false;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
             // 
             // modelTextBox
             // 
@@ -156,8 +169,9 @@ namespace CASystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(682, 450);
             this.Controls.Add(this.sellButton);
+            this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.showOnlyAvailableCheckBox);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label2);
@@ -189,5 +203,6 @@ namespace CASystem
         private System.Windows.Forms.ColumnHeader availableHeader;
         private System.Windows.Forms.CheckBox showOnlyAvailableCheckBox;
         private System.Windows.Forms.Button sellButton;
+        private System.Windows.Forms.Button logOutButton;
     }
 }
