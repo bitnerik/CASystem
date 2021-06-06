@@ -22,7 +22,7 @@ namespace CASystem
 
         private void button21_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM Product WHERE ProductTypeID = {comboBox1.SelectedValue}  and ProductAvailable = {(soldRadioButton.Checked ? 1 : 0)}", SqlCon.SqlConnection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM Product WHERE ProductTypeID = {comboBox1.SelectedValue}  and ProductAvailable = {(boughtRadioButton.Checked ? 1 : 0)}", SqlCon.SqlConnection);
 
             DataSet dataSet = new DataSet();
             dataAdapter.Fill(dataSet);

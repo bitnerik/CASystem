@@ -33,7 +33,7 @@ namespace CASystem
         {
             SqlCommand command = new SqlCommand($"INSERT INTO [Product] (ProductBrand, ProductBuyDate, ProductModel, ProductBuyPrice, ProductSellPrice, ProductTypeID) VALUES (@ProductBrand, @ProductBuyDate, @ProductModel, @ProductBuyPrice, @ProductSellPrice, @ProductTypeID)", SqlCon.SqlConnection);
 
-            DateTime date = DateTime.Parse(textBox2.Text);
+            DateTime date = buyDateTimePicker.Value;
 
             command.Parameters.AddWithValue("ProductBrand", textBox1.Text);
             command.Parameters.AddWithValue("ProductBuyDate", $"{date.Year}/{date.Month}/{date.Day}");
@@ -55,7 +55,7 @@ namespace CASystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM Product WHERE ProductTypeID = {comboBox1.SelectedValue}  and ProductAvailable = {(soldRadioButton.Checked ? 1 : 0)}", SqlCon.SqlConnection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM Product WHERE ProductTypeID = {comboBox1.SelectedValue}  and ProductAvailable = {(boughtRadioButton.Checked ? 1 : 0)}", SqlCon.SqlConnection);
 
             DataSet dataSet = new DataSet();
             dataAdapter.Fill(dataSet);
@@ -82,6 +82,14 @@ namespace CASystem
         }
 
         private void logOutButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var loginForm = new LoginForm();
+            loginForm.ShowDialog();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
             var loginForm = new LoginForm();
