@@ -30,8 +30,10 @@ namespace CASystem
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.logOutButton = new System.Windows.Forms.Button();
             this.Insert = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.productTypeComboBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,13 +41,14 @@ namespace CASystem
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.boughtRadioButton = new System.Windows.Forms.RadioButton();
+            this.soldRadioButton = new System.Windows.Forms.RadioButton();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -61,6 +64,7 @@ namespace CASystem
             this.productTypeTableAdapter = new CASystem.CADBDataSetTableAdapters.ProductTypeTableAdapter();
             this.productTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.productTypeTableAdapter1 = new CASystem.CADBDataSet1TableAdapters.ProductTypeTableAdapter();
+            this.button3 = new System.Windows.Forms.Button();
             this.Insert.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -74,6 +78,18 @@ namespace CASystem
             ((System.ComponentModel.ISupportInitialize)(this.productTypeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
+            // logOutButton
+            // 
+            this.logOutButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.logOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.logOutButton.Location = new System.Drawing.Point(833, 380);
+            this.logOutButton.Name = "logOutButton";
+            this.logOutButton.Size = new System.Drawing.Size(118, 41);
+            this.logOutButton.TabIndex = 11;
+            this.logOutButton.Text = "Log out";
+            this.logOutButton.UseVisualStyleBackColor = false;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
+            // 
             // Insert
             // 
             this.Insert.Controls.Add(this.tabPage1);
@@ -82,11 +98,13 @@ namespace CASystem
             this.Insert.Location = new System.Drawing.Point(0, 0);
             this.Insert.Name = "Insert";
             this.Insert.SelectedIndex = 0;
-            this.Insert.Size = new System.Drawing.Size(1049, 465);
+            this.Insert.Size = new System.Drawing.Size(967, 468);
             this.Insert.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Controls.Add(this.productTypeComboBox);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label4);
@@ -94,7 +112,6 @@ namespace CASystem
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.textBox6);
             this.tabPage1.Controls.Add(this.textBox5);
             this.tabPage1.Controls.Add(this.textBox4);
             this.tabPage1.Controls.Add(this.textBox3);
@@ -102,25 +119,34 @@ namespace CASystem
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage1.Size = new System.Drawing.Size(1041, 439);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(959, 442);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Insert product";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // productTypeComboBox
+            // 
+            this.productTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.productTypeComboBox.FormattingEnabled = true;
+            this.productTypeComboBox.Location = new System.Drawing.Point(551, 174);
+            this.productTypeComboBox.Name = "productTypeComboBox";
+            this.productTypeComboBox.Size = new System.Drawing.Size(100, 21);
+            this.productTypeComboBox.TabIndex = 13;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(580, 198);
+            this.label6.Location = new System.Drawing.Point(548, 159);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 13);
+            this.label6.Size = new System.Drawing.Size(67, 13);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Product type ID";
+            this.label6.Text = "Product type";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(301, 198);
+            this.label5.Location = new System.Drawing.Point(414, 160);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 13);
             this.label5.TabIndex = 11;
@@ -129,7 +155,7 @@ namespace CASystem
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(45, 198);
+            this.label4.Location = new System.Drawing.Point(285, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 13);
             this.label4.TabIndex = 10;
@@ -138,7 +164,7 @@ namespace CASystem
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(580, 44);
+            this.label3.Location = new System.Drawing.Point(548, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 9;
@@ -147,7 +173,7 @@ namespace CASystem
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(301, 44);
+            this.label2.Location = new System.Drawing.Point(414, 99);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 13);
             this.label2.TabIndex = 8;
@@ -156,7 +182,7 @@ namespace CASystem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 44);
+            this.label1.Location = new System.Drawing.Point(285, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 7;
@@ -164,7 +190,7 @@ namespace CASystem
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(304, 337);
+            this.button1.Location = new System.Drawing.Point(417, 212);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 34);
             this.button1.TabIndex = 6;
@@ -172,37 +198,30 @@ namespace CASystem
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(583, 214);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 5;
-            // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(304, 214);
+            this.textBox5.Location = new System.Drawing.Point(417, 176);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 4;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(45, 214);
+            this.textBox4.Location = new System.Drawing.Point(285, 175);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 3;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(583, 63);
+            this.textBox3.Location = new System.Drawing.Point(551, 118);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 2;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(304, 63);
+            this.textBox2.Location = new System.Drawing.Point(417, 118);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 1;
@@ -210,13 +229,16 @@ namespace CASystem
             // textBox1
             // 
             this.textBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBox1.Location = new System.Drawing.Point(45, 63);
+            this.textBox1.Location = new System.Drawing.Point(285, 117);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 0;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.boughtRadioButton);
+            this.tabPage2.Controls.Add(this.logOutButton);
+            this.tabPage2.Controls.Add(this.soldRadioButton);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.textBox7);
             this.tabPage2.Controls.Add(this.comboBox1);
@@ -225,29 +247,53 @@ namespace CASystem
             this.tabPage2.Controls.Add(this.tableLayoutPanel1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(1041, 439);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(959, 442);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Count product";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // boughtRadioButton
+            // 
+            this.boughtRadioButton.AutoSize = true;
+            this.boughtRadioButton.Location = new System.Drawing.Point(161, 407);
+            this.boughtRadioButton.Name = "boughtRadioButton";
+            this.boughtRadioButton.Size = new System.Drawing.Size(103, 17);
+            this.boughtRadioButton.TabIndex = 8;
+            this.boughtRadioButton.Text = "Bought products";
+            this.boughtRadioButton.UseVisualStyleBackColor = true;
+            this.boughtRadioButton.CheckedChanged += new System.EventHandler(this.boughtRadioButton_CheckedChanged);
+            // 
+            // soldRadioButton
+            // 
+            this.soldRadioButton.AutoSize = true;
+            this.soldRadioButton.Checked = true;
+            this.soldRadioButton.Location = new System.Drawing.Point(161, 388);
+            this.soldRadioButton.Name = "soldRadioButton";
+            this.soldRadioButton.Size = new System.Drawing.Size(90, 17);
+            this.soldRadioButton.TabIndex = 7;
+            this.soldRadioButton.TabStop = true;
+            this.soldRadioButton.Text = "Sold products";
+            this.soldRadioButton.UseVisualStyleBackColor = true;
+            this.soldRadioButton.CheckedChanged += new System.EventHandler(this.soldRadioButton_CheckedChanged);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(659, 394);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label8.Location = new System.Drawing.Point(417, 387);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 24);
+            this.label8.Size = new System.Drawing.Size(37, 13);
             this.label8.TabIndex = 6;
             this.label8.Text = "Result";
             // 
             // textBox7
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(727, 391);
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.textBox7.Location = new System.Drawing.Point(420, 403);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(100, 29);
+            this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 5;
             // 
             // comboBox1
@@ -255,11 +301,11 @@ namespace CASystem
             this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productTypeBindingSource2, "ProductTypeID", true));
             this.comboBox1.DataSource = this.productTypeBindingSource2;
             this.comboBox1.DisplayMember = "TypeName";
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(392, 388);
+            this.comboBox1.Location = new System.Drawing.Point(8, 403);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 32);
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 4;
             this.comboBox1.ValueMember = "ProductTypeID";
             // 
@@ -276,16 +322,16 @@ namespace CASystem
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(294, 388);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label7.Location = new System.Drawing.Point(5, 387);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 24);
+            this.label7.Size = new System.Drawing.Size(45, 13);
             this.label7.TabIndex = 3;
             this.label7.Text = "Type ID";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(519, 384);
+            this.button2.Location = new System.Drawing.Point(303, 387);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 37);
             this.button2.TabIndex = 1;
@@ -302,7 +348,7 @@ namespace CASystem
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1110, 371);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(957, 371);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dataGridView1
@@ -310,7 +356,7 @@ namespace CASystem
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1102, 365);
+            this.dataGridView1.Size = new System.Drawing.Size(951, 365);
             this.dataGridView1.TabIndex = 1;
             // 
             // productTypeBindingSource3
@@ -341,11 +387,22 @@ namespace CASystem
             // 
             this.productTypeTableAdapter1.ClearBeforeFill = true;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.button3.Location = new System.Drawing.Point(533, 322);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(118, 41);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "Log out";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
             // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1049, 465);
+            this.ClientSize = new System.Drawing.Size(967, 468);
             this.Controls.Add(this.Insert);
             this.Name = "ManagerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -379,7 +436,6 @@ namespace CASystem
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -401,6 +457,11 @@ namespace CASystem
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.BindingSource productTypeBindingSource3;
+        private System.Windows.Forms.ComboBox productTypeComboBox;
+        private System.Windows.Forms.RadioButton boughtRadioButton;
+        private System.Windows.Forms.RadioButton soldRadioButton;
+        private System.Windows.Forms.Button logOutButton;
+        private System.Windows.Forms.Button button3;
     }
 }
 

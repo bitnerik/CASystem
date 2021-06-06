@@ -18,6 +18,15 @@ namespace CASystem
             this.productTypeTableAdapter1.Fill(this.cADBDataSet1.ProductType);
             // TODO: This line of code loads data into the 'cADBDataSet.ProductType' table. You can move, or remove it, as needed.
             this.productTypeTableAdapter.Fill(this.cADBDataSet.ProductType);
+
+            SqlCommand query = new SqlCommand($"SELECT * FROM ProductType", SqlCon.SqlConnection);
+            DataTable dataTable = new DataTable();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = query;
+            dataAdapter.Fill(dataTable);
+            productTypeComboBox.DataSource = dataTable;
+            productTypeComboBox.DisplayMember = "TypeName";
+            productTypeComboBox.ValueMember = "ProductTypeID";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,7 +40,7 @@ namespace CASystem
             command.Parameters.AddWithValue("ProductModel", textBox3.Text);
             command.Parameters.AddWithValue("ProductBuyPrice", textBox4.Text);
             command.Parameters.AddWithValue("ProductSellPrice", textBox5.Text);
-            command.Parameters.AddWithValue("ProductTypeID", textBox6.Text);
+            command.Parameters.AddWithValue("ProductTypeID", productTypeComboBox.SelectedValue);
 
             MessageBox.Show(command.ExecuteNonQuery().ToString());
 
@@ -39,7 +48,7 @@ namespace CASystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM Product WHERE ProductTypeID = {comboBox1.SelectedValue}  and ProductAvailable = 1", SqlCon.SqlConnection);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter($"SELECT * FROM Product WHERE ProductTypeID = {comboBox1.SelectedValue}  and ProductAvailable = {(soldRadioButton.Checked ? 1 : 0)}", SqlCon.SqlConnection);
 
             DataSet dataSet = new DataSet();
             dataAdapter.Fill(dataSet);
@@ -47,6 +56,30 @@ namespace CASystem
             var rowCount = dataSet.Tables[0].Rows.Count;
             textBox7.Text = rowCount.ToString();
             dataGridView1.DataSource = dataSet.Tables[0];
+        }
+
+        private void boughtRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (boughtRadioButton.Checked)
+            {
+                soldRadioButton.Checked = false;
+            }
+        }
+
+        private void soldRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (soldRadioButton.Checked)
+            {
+                boughtRadioButton.Checked = false;
+            }
+        }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var loginForm = new LoginForm();
+            loginForm.ShowDialog();
+            this.Close();
         }
     }
 }

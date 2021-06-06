@@ -1,5 +1,4 @@
-﻿using System;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -18,9 +17,9 @@ namespace CASystem
         {
             SqlConnection.Open();
 
-            if (SqlConnection.State == ConnectionState.Open)
+            if (SqlConnection.State != ConnectionState.Open)
             {
-                MessageBox.Show("Connection successful");
+                MessageBox.Show("Database connection failure. Check Database connection path");
             }
         }
     }

@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CASystem
@@ -45,7 +39,7 @@ namespace CASystem
                 isGoodQuery = false;
             }
 
-            if (isGoodQuery)    
+            if (isGoodQuery)
             {
                 SqlCommand command = new SqlCommand(query, SqlCon.SqlConnection);
                 DataTable dataTable = new DataTable();
@@ -85,6 +79,13 @@ namespace CASystem
             MessageBox.Show($"{productListBox.CheckedItems.Count} products sold.\n{dateNow}");
 
             checkProductButton_Click(sender, e);
+        }
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var loginForm = new LoginForm();
+            loginForm.ShowDialog();
+            this.Close();
         }
     }
 }
